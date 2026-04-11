@@ -171,7 +171,7 @@ All three metrics identified the same optimal angle:
 
 ![Final Mutual Information Bar Chart](figures/10_mutual_information_bar_chart.png)
 
-## 9. Automatic Pairwise Registration Reports
+## 9. Pairwise Registration Reports
 
 ### T2 vs DWI
 
