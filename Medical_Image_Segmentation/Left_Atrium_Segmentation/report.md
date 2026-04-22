@@ -23,7 +23,7 @@ A **Chan-Vese active contour model** was selected because it is a region-based m
 
 Input data are loaded from:
 
-- `IMAGES/patient5.mat`
+- `data/patient5.mat`
 
 The MATLAB structure contains:
 

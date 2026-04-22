@@ -6,10 +6,11 @@
 %% --------------------- 1. INITIALIZATION ---------------------
 clc; clear; close all;
 
-addpath(genpath('mylibs'));
+repoRoot = fileparts(fileparts(fileparts(mfilename('fullpath'))));
+addpath(genpath(fullfile(repoRoot, 'lib')));
 
 %% --------------------- 2. LOAD 3D MRI VOLUME ---------------------
-load(fullfile('IMAGES', 'patient5.mat'));
+load(fullfile(repoRoot, 'data', 'patient5.mat'));
 
 I = res.imm;                           % 3D MRI volume
 pixel_spacing = res.info.ps;          % [dy, dx] in mm
@@ -139,6 +140,11 @@ end
 
 %% --------------------- 7. 3D MESH RECONSTRUCTION ---------------------
 fprintf('\n=== 3D Mesh Reconstruction ===\n');
+
+if exist('binsurface', 'file') ~= 2 || exist('plotmesh', 'file') ~= 2
+    error(['Iso2Mesh functions were not found on the MATLAB path. ' ...
+           'Install Iso2Mesh separately to enable 3D reconstruction.']);
+end
 
 [node, elem] = binsurface(PHI_bin);
 

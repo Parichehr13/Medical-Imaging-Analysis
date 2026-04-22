@@ -6,11 +6,11 @@
 %% --------------------- 1. INITIALIZATION & IMAGE LOADING ---------------------
 clc; clear; close all;
 
-addpath(genpath('mylibs'));
+repoRoot = fileparts(fileparts(fileparts(mfilename('fullpath'))));
+addpath(genpath(fullfile(repoRoot, 'lib')));
 
 % Define image path
-image_dir = 'C:\Users\admin\OneDrive\Desktop\Lab8\IMAGES';
-folder = fullfile(pwd, 'IMAGES');
+folder = fullfile(repoRoot, 'data');
 filename = 'MR_breast';
 full_path = fullfile(folder, filename);
 

@@ -8,20 +8,21 @@
 
 %% --------------------- 1. INITIALIZATION & IMAGE LOADING ---------------------
 clc; clear; close all;
-addpath(genpath('mylibs'));
+repoRoot = fileparts(fileparts(mfilename('fullpath')));
+addpath(genpath(fullfile(repoRoot, 'lib')));
 
 % Load DICOM images and metadata
-info_T2 = dicominfo('IMAGES/MRI_T2.dcm');
+info_T2 = dicominfo(fullfile(repoRoot, 'data', 'MRI_T2.dcm'));
 I_T2 = dicomread(info_T2);
 
-info_DWI = dicominfo('IMAGES/MRI_DWI.dcm');
+info_DWI = dicominfo(fullfile(repoRoot, 'data', 'MRI_DWI.dcm'));
 I_DWI = dicomread(info_DWI);
 
-info_PET = dicominfo('IMAGES/PET.dcm');
+info_PET = dicominfo(fullfile(repoRoot, 'data', 'PET.dcm'));
 I_PET = dicomread(info_PET);
 I_PET = squeeze(I_PET);  % Remove extra singleton dimension
 
-info_T2_rot = dicominfo('IMAGES/MRI_T2_rot.dcm');
+info_T2_rot = dicominfo(fullfile(repoRoot, 'data', 'MRI_T2_rot.dcm'));
 I_T2_rot = dicomread(info_T2_rot);
 
 % Display original image sizes

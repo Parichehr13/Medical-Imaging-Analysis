@@ -5,11 +5,12 @@
 
 %% --------------------- 1. INITIALIZATION & IMAGE LOADING ---------------------
 clc; clear; close all;
-addpath(genpath('mylibs'));
+repoRoot = fileparts(fileparts(fileparts(mfilename('fullpath'))));
+addpath(genpath(fullfile(repoRoot, 'lib')));
 
 % Load DICOM images
-info_fixed  = dicominfo(fullfile('IMAGES', 'IM3696'));   % No contrast
-info_moving = dicominfo(fullfile('IMAGES', 'IM1883'));   % With contrast
+info_fixed  = dicominfo(fullfile(repoRoot, 'data', 'IM3696'));   % No contrast
+info_moving = dicominfo(fullfile(repoRoot, 'data', 'IM1883'));   % With contrast
 
 I_fixed  = double(dicomread(info_fixed));
 I_moving = double(dicomread(info_moving));

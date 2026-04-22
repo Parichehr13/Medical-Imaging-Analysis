@@ -7,10 +7,11 @@
 clc; clear; close all;
 
 % Add custom function library
-addpath(genpath('mylibs'));
+repoRoot = fileparts(fileparts(fileparts(mfilename('fullpath'))));
+addpath(genpath(fullfile(repoRoot, 'lib')));
 
 % Load target DICOM image
-image_folder = fullfile(pwd, 'IMAGES');
+image_folder = fullfile(repoRoot, 'data');
 image_filename = 'SE06_IM194';  % No extension required
 image_path = fullfile(image_folder, image_filename);
 
