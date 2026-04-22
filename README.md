@@ -1,8 +1,8 @@
 # Medical Imaging Analysis
 
-Curated MATLAB portfolio project covering classical medical image analysis workflows across multimodal registration, level-set segmentation, quantitative morphometry, and 3D reconstruction.
+Compact MATLAB portfolio project covering classical medical image analysis workflows across multimodal registration, level-set segmentation, quantitative morphometry, and 3D reconstruction.
 
-The repository is best read as one compact imaging-analysis portfolio rather than as a framework: it collects representative studies on MRI, CT, and PET data, with an emphasis on interpretable classical methods, visual validation, and physically meaningful measurements.
+The repository brings together a small set of focused studies on MRI, CT, and PET data, emphasizing interpretable classical methods, visual validation, and physically meaningful measurements.
 
 ## Overview
 
@@ -12,6 +12,13 @@ The project is organized around four complementary tasks:
 - **Classical segmentation:** segment renal, cardiac, and breast structures with Malladi-Sethian and Chan-Vese level-set methods.
 - **Quantitative morphometry:** compute structure-specific areas in `mm^2` and volumetric estimates in `mm^3`.
 - **3D reconstruction:** reconstruct the left atrium from slice-wise MRI segmentation.
+
+Included studies:
+
+- T2/DWI/PET registration with translation and rotation assessment
+- Kidney, cardiac ventricle, left atrium, and breast lesion segmentation
+- Area and volume estimation in physical units
+- 3D left-atrium surface reconstruction
 
 ## Main Components
 
@@ -60,7 +67,7 @@ Medical-Imaging-Analysis/
 - Input datasets stored in [`data/`](data)
 - **Optional:** [Iso2Mesh](https://iso2mesh.sourceforge.net/) on the MATLAB path for the 3D reconstruction step in the left-atrium workflow
 
-The MATLAB scripts now resolve `data/` and `lib/` relative to the repository root, which makes the checked-in structure portable across machines.
+The MATLAB scripts resolve `data/` and `lib/` relative to the repository root so the checked-in structure remains portable across machines.
 
 ## Detailed Reports
 
